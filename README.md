@@ -10,11 +10,11 @@ WARNING: Use this only if you could not get the normal plugin installation to wo
 
 If you need you install manually for any reason, here are the steps to install the plugin manually:
 
-1. Click on this link to download the plugin directly: https://github.com/WesternGamer/No-News-Plugin/releases/download/v1.0.0/No.News.Plugin.dll
+1. Click on this link to download the plugin directly: COMING SOON
 
 2. The browser that you are using may say that the plugin is dangerous. Click keep to keep the plugin. It may be hidden so you may need to click the arrow or dots next to the downloaded plugin.
 
-3. Go to your downloads folder and find the plugin file called `No.News.Plugin.dll`.
+3. Go to your downloads folder and find the plugin file called ` `.
 
 4. Right click and the file and click cut.
 
@@ -34,4 +34,4 @@ If you need you install manually for any reason, here are the steps to install t
 
 13. At the bottom, click unblock then Apply. You can now close the window.
 
-15. Start Space Engineers and go to the plugins menu from the main menu and select `No.News.Plugin.dll`. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done!
+15. Start Space Engineers and go to the plugins menu from the main menu and select ` `. Click Apply and you will be asked to restart the game. Click Yes to restart the game and you done!
