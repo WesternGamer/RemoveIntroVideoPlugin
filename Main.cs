@@ -8,6 +8,11 @@ using System;
 using Sandbox.Game.Gui;
 using System.Threading;
 using VRageMath;
+using System.IO;
+using System.Xml;
+using VRage.FileSystem;
+using VRage.Utils;
+using Sandbox.Game.Screens;
 
 namespace RemoveIntroVideoPlugin
 {
@@ -59,7 +64,8 @@ namespace RemoveIntroVideoPlugin
             {
                 //Replaces the wrong main menu with the right one
                 MyScreenManager.CloseScreenNow(typeof(MyGuiScreenMainMenu));
-                MyScreenManager.AddScreen(MyGuiSandbox.CreateScreen(SEWorldGenMainMenu, false));
+                MyScreenManager.RemoveScreenByType(typeof(MyGuiScreenMainMenu));
+                MyScreenManager.AddScreen(MyGuiSandbox.CreateScreen(SEWorldGenMainMenu, false));       
                 MenuFixed = true;
                 return;
             }
@@ -68,12 +74,11 @@ namespace RemoveIntroVideoPlugin
             if (MyScreenManager.IsScreenOfTypeOpen(typeof(MyGuiScreenMainMenu)) && CustomLoadingBackgroundsMenu != null)
             {
                 MyScreenManager.CloseScreenNow(typeof(MyGuiScreenMainMenu));
+                MyScreenManager.RemoveScreenByType(typeof(MyGuiScreenMainMenu));
                 MyScreenManager.AddScreen(MyGuiSandbox.CreateScreen(typeof(MyGuiScreenMainMenu), false));
                 MenuFixed = true;
                 return;
             }
-
-            MenuFixed = true;
         }
     }
 }
