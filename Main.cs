@@ -21,8 +21,6 @@ namespace RemoveIntroVideoPlugin
     /// </summary>
     public class Main : IPlugin
     {
-        private Type SEWorldGenMainMenu = AccessTools.TypeByName("SEWorldGenPlugin.GUI.MyPluginMainMenu");
-        private Type CustomLoadingBackgroundsMenu = AccessTools.TypeByName("CustomScreenBackgrounds.GUI.BackgroundScreen");
         private bool MenuFixed = false;
 
         /// <summary>
@@ -60,24 +58,13 @@ namespace RemoveIntroVideoPlugin
                 return;
             }
 
-            if (MyScreenManager.IsScreenOfTypeOpen(typeof(MyGuiScreenMainMenu)) && SEWorldGenMainMenu != null) //Checks if SEWorldGen is installed and if the main menu is open.
+            if (MyScreenManager.ExistsScreenOfType(typeof(MyGuiScreenMainMenu)))
             {
                 //Replaces the wrong main menu with the right one
                 MyScreenManager.CloseScreenNow(typeof(MyGuiScreenMainMenu));
                 MyScreenManager.RemoveScreenByType(typeof(MyGuiScreenMainMenu));
-                MyScreenManager.AddScreen(MyGuiSandbox.CreateScreen(SEWorldGenMainMenu, false));       
+                MyScreenManager.AddScreen(MyGuiSandbox.CreateScreen(typeof(MyGuiScreenMainMenu), false));       
                 MenuFixed = true;
-                return;
-            }
-
-
-            if (MyScreenManager.IsScreenOfTypeOpen(typeof(MyGuiScreenMainMenu)) && CustomLoadingBackgroundsMenu != null)
-            {
-                MyScreenManager.CloseScreenNow(typeof(MyGuiScreenMainMenu));
-                MyScreenManager.RemoveScreenByType(typeof(MyGuiScreenMainMenu));
-                MyScreenManager.AddScreen(MyGuiSandbox.CreateScreen(typeof(MyGuiScreenMainMenu), false));
-                MenuFixed = true;
-                return;
             }
         }
     }
